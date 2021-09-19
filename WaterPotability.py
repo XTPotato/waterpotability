@@ -85,8 +85,8 @@ st.plotly_chart(plot3)
 st.write('This correlation heat map shows the degree of correlation between each variable. 1 means the variables are perfectly linearly correlated, while 0 means the variables are perfectly uncorrelated(linearly). As seen from this heatmap and the previous scatter matrix, correlation between all variables are extremely low. This further explains the difficulty of creating a usable model for prediction. ')
 
 st.subheader('Countplot')
-plot4 = px.histogram(nwater, 'Potability')  
-st.plotly_chart(plot4)
+barwater = nwater.groupby('Potability').count().reset_index()
+plot4 = px.bar(barwater, 'Potability', 'ph', labels={'ph':'count'})
 st.write('This countplot shows the proportion of potable waters and non-potable waters in the dataset. Roughly 60% are non-potable and 40% are potable. ')
 
 st.header('Applying K-Nearest-Neighbors')
