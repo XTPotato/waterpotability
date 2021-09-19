@@ -87,6 +87,7 @@ st.write('This correlation heat map shows the degree of correlation between each
 st.subheader('Countplot')
 barwater = nwater.groupby('Potability').count().reset_index()
 plot4 = px.bar(barwater, 'Potability', 'ph', labels={'ph':'count'})
+st.plotly_chart(plot4)
 st.write('This countplot shows the proportion of potable waters and non-potable waters in the dataset. Roughly 60% are non-potable and 40% are potable. ')
 
 st.header('Applying K-Nearest-Neighbors')
