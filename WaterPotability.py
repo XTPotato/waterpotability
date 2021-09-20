@@ -259,7 +259,7 @@ with st.form("form1"):
     
     tableinput = pd.DataFrame(np.array([[fsa, fsb, fsc, fsd, fse, fsf, fsg, fsh, fsi]]), columns=colum)
     formresult = classify(tableinput.iloc[0], totrain, 25)
-submitted = st.form_submit_button("Submit")
+    submitted = st.form_submit_button("Submit")
 if submitted:
     formresult
     if formresult==1:
